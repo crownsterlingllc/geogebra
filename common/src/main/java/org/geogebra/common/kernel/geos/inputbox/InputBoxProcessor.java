@@ -60,7 +60,7 @@ public class InputBoxProcessor {
 		String tempUserDisplayInput = getAndClearTempUserDisplayInput(inputText);
 
 		String defineText = inputText;
-		if (linkedGeo instanceof GeoNumeric) {
+		if (!inputBox.isSymbolicMode() && linkedGeo instanceof GeoNumeric) {
 			GeoNumeric number = (GeoNumeric) linkedGeo;
 			double num = kernel.getAlgebraProcessor()
 						.evaluateToDouble(inputText, true, null);
